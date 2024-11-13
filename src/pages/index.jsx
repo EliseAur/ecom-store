@@ -1,3 +1,4 @@
-import App from "./App";
+import Home from "./home";
+import About from "./about";
 
-export { App };
+export { Home, About };
