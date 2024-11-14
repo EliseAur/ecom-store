@@ -2,14 +2,14 @@
 // import reactLogo from "../../public/assets/react.svg";
 // import viteLogo from "../../public/vite.svg";
 // import "../styles/App.css";
-import { Header, Footer } from "../components";
+// import { Header, Footer } from "../components";
 
 function Home() {
   // const [count, setCount] = useState(0);
 
   return (
     <div id="main-container" className="container mx-auto">
-      <Header />
+      {/* <Header /> */}
       <main className="text-center">
         <h1 className="text-3xl">HOME - Welcome to Shop:it</h1>
         <p>
@@ -17,7 +17,7 @@ function Home() {
           Exercitationem, aspernatur accusamus? Illo, consequatur?
         </p>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
