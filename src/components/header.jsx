@@ -21,7 +21,7 @@ export default function Header() {
             Cart
           </a>
         </nav>
-        <div>Login</div>
+        <Link to="/login">Login</Link>
       </div>
     </header>
   );
