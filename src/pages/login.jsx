@@ -1,14 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (event) => {
-    // alert("I am the handler for the submit event");
-    event.preventDefault();
+  const navigate = useNavigate();
 
-    // console.log({ email, password });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     // Do fetch request here
 
@@ -25,11 +25,13 @@ export default function Login() {
       }),
     });
 
+    const result = await response.json();
+
     if (response.ok) {
-      const result = await response.json();
       console.log(JSON.stringify(result));
+      navigate("/");
     } else {
-      throw new Error(JSON.stringify);
+      throw new Error(result.errors[0].message);
     }
   };
 
@@ -74,6 +76,13 @@ export default function Login() {
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-200">
             Login
           </button>
+
+          {/* Additional links */}
+          <div className="mt-4 text-center">
+            <a href="#" className="text-blue-500 hover:underline text-sm">
+              Forgot your password?
+            </a>
+          </div>
         </form>
       </div>
     </div>

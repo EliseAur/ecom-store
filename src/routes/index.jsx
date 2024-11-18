@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, About, Login } from "../pages";
+import { Home, About, Login, Contact, Cart } from "../pages";
 import { MainLayout } from "../layouts";
 
 const router = createBrowserRouter([
@@ -18,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
       },
       // Other pages that share the same structure and lyout as Home and About
     ],

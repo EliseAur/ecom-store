@@ -13,15 +13,19 @@ export default function Header() {
           <Link to="/" className="hover:text-gray-200">
             Home
           </Link>
-          <Link to="/about">About</Link>
-          <a href="#" className="hover:text-gray-200">
+          <Link to="/about" className="hover:text-gray-200">
+            About
+          </Link>
+          <Link to="/contact" className="hover:text-gray-200">
             Contact
-          </a>
-          <a href="#" className="hover:text-gray-200">
+          </Link>
+          <Link to="/cart" className="hover:text-gray-200">
             Cart
-          </a>
+          </Link>
         </nav>
-        <Link to="/login">Login</Link>
+        <Link to="/login" className="hover:text-gray-200">
+          Login
+        </Link>
       </div>
     </header>
   );
