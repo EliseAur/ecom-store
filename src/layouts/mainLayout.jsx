@@ -5,7 +5,7 @@ function MainLayout() {
   // const [count, setCount] = useState(0);
 
   return (
-    <div id="main-container" className="container mx-auto">
+    <div id="main-container" className="">
       <Header />
       <Outlet />
       <Footer />
