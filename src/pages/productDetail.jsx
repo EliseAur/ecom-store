@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProductDetails } from "../api";
 import { ProductDetailContent } from "../components";
+import { ErrorMessage } from "../components";
 
 function ProductDetail() {
   const { id } = useParams();
@@ -30,14 +31,18 @@ function ProductDetail() {
     // Implement the logic to add the product to the cart later
   };
 
+  // if (error) {
+  //   return (
+  //     <div>
+  //       <h2>Error: {error.message}</h2>
+  //       <p>Status: {error.status}</p>
+  //       <p>Status code: {error.statusCode}</p>
+  //     </div>
+  //   );
+  // }
+
   if (error) {
-    return (
-      <div>
-        <h2>Error: {error.message}</h2>
-        <p>Status: {error.status}</p>
-        <p>Status code: {error.statusCode}</p>
-      </div>
-    );
+    return <ErrorMessage message={error.message} status={error.status} statusCode={error.statusCode} />;
   }
 
   if (!product) {
