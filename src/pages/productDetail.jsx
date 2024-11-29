@@ -14,59 +14,37 @@ function ProductDetail() {
         const product = await fetchProductDetails(id);
         setProduct(product);
       } catch (error) {
-        setError(error.message);
+        setError({
+          message: error.message,
+          status: error.status,
+          statusCode: error.statusCode,
+        });
       }
     }
 
     loadProduct();
   }, [id]);
 
+  const handleAddToCart = (product) => {
+    console.log("Add to Cart:", product);
+    // Implement the logic to add the product to the cart later
+  };
+
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div>
+        <h2>Error: {error.message}</h2>
+        <p>Status: {error.status}</p>
+        <p>Status code: {error.statusCode}</p>
+      </div>
+    );
   }
 
   if (!product) {
     return <div>Loading...</div>;
   }
 
-  return <ProductDetailContent product={product} />;
+  return <ProductDetailContent product={product} onAddToCart={handleAddToCart} />;
 }
 
 export default ProductDetail;
-
-// function ProductDetail() {
-//   const { id } = useParams();
-//   const [product, setProduct] = useState(null);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     async function fetchProduct() {
-//       try {
-//         const response = await fetch(`https://v2.api.noroff.dev/online-shop/${id}`);
-//         const result = await response.json();
-
-//         if (response.ok) {
-//           setProduct(result.data);
-//         } else {
-//           throw new Error(result.errors ? result.errors[0].message : "An error occurred");
-//         }
-//       } catch (error) {
-//         setError(error.message);
-//       }
-//     }
-
-//     fetchProduct();
-//   }, [id]);
-
-//   if (error) {
-//     return <div>Error: {error}</div>;
-//   }
-
-//   if (!product) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return <ProductDetailContent product={product} />;
-// }
-
-// export default ProductDetail;

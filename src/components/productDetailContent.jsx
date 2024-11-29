@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function ProductDetailContent({ product }) {
+function ProductDetailContent({ product, onAddToCart }) {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold">{product.title}</h1>
@@ -8,6 +8,9 @@ function ProductDetailContent({ product }) {
       <p className="mt-4">{product.description}</p>
       <p className="mt-2 text-xl font-bold">${product.price}</p>
       <p className="mt-2 text-gray-700">Rating: {product.rating}</p>
+      <button onClick={() => onAddToCart(product)} className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+        Add to Cart
+      </button>
       <div className="mt-4">
         <h2 className="text-2xl font-bold">Reviews</h2>
         {product.reviews.map((review) => (
@@ -42,6 +45,7 @@ ProductDetailContent.propTypes = {
       })
     ).isRequired,
   }).isRequired,
+  onAddToCart: PropTypes.func.isRequired,
 };
 
 export default ProductDetailContent;
