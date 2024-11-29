@@ -1,8 +1,8 @@
-import Home from "./home";
-import About from "./about";
-import Login from "./login";
-import Contact from "./contact";
-import Cart from "./cart";
-import ProductDetail from "./productDetail";
+import Home from "./Home";
+import About from "./About";
+import Login from "./Login";
+import Contact from "./Contact";
+import Cart from "./Cart";
+import ProductDetail from "./ProductDetail";
 
 export { Home, About, Login, Contact, Cart, ProductDetail };
