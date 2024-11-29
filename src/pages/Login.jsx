@@ -10,8 +10,6 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Do fetch request here
-
     const url = "https://v2.api.noroff.dev/auth/login";
 
     const response = await fetch(url, {
