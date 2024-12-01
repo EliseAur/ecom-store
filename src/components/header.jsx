@@ -23,10 +23,16 @@ export default function Header() {
           <Link to="/contact" className="hover:text-gray-200">
             Contact
           </Link>
-          <Link to="/cart" className="hover:text-gray-200 flex items-center">
-            <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6 mr-1" />
-            <span>{cartItemCount}</span>
-          </Link>
+          <div className="relative">
+            <Link to="/cart" className="hover:text-gray-200 flex items-center">
+              <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
+              {cartItemCount > 0 && (
+                <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link>
+          </div>
         </nav>
         <Link to="/login" className="hover:text-gray-200">
           Login
