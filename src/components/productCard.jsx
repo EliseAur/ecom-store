@@ -7,6 +7,9 @@ export default function ProductCard({ product }) {
       <img src={product.image.url} alt={product.image.alt} className="w-full h-48 object-cover rounded-md" />
       <h2 className="mt-2 text-xl font-bold">{product.title}</h2>
       <p className="mt-1 text-gray-700">${product.price}</p>
+      <Link to={`/product/${product.id}`} className="mt-4 inline-block bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700">
+        View
+      </Link>
     </Link>
   );
 }
