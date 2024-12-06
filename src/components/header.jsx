@@ -3,9 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
-function Header() {
+function Header({ cart }) {
   const [isOpen, setIsOpen] = useState(false);
-  const cartItemCount = 3; // Placeholder number for now
+  // const cartItemCount = 3; // Placeholder number for now
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -16,6 +16,8 @@ function Header() {
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
+
+  const totalCartItems = cart.reduce((sum, product) => sum + product.quantity, 0);
 
   return (
     <header className="bg-blue-600 text-white shadow-md w-full">
@@ -29,9 +31,9 @@ function Header() {
           <span className="relative mx-9">
             <Link to="/cart" className="hover:text-gray-200">
               <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
-              {cartItemCount > 0 && (
+              {totalCartItems > 0 && (
                 <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-[10px] font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                  {cartItemCount}
+                  {totalCartItems}
                 </span>
               )}
             </Link>
@@ -51,9 +53,19 @@ function Header() {
             Contact
           </Link>
         </nav>
-        <Link to="/login" className="hover:text-gray-200 hidden md:block">
+        {/* <Link to="/login" className="hover:text-gray-200 hidden md:block">
           Login
-        </Link>
+        </Link> */}
+        <span className="relative mx-9 hidden md:block">
+          <Link to="/cart" className="hover:text-gray-200">
+            <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
+            {totalCartItems > 0 && (
+              <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-[10px] font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                {totalCartItems}
+              </span>
+            )}
+          </Link>
+        </span>
       </div>
       {isOpen && (
         <div className="fixed inset-0 bg-blue-600 text-white flex flex-col items-center justify-start z-50">
@@ -71,18 +83,14 @@ function Header() {
               Contact
             </Link>
             <div className="relative">
-              <Link to="/cart" className="hover:text-gray-200">
-                <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
-                {cartItemCount > 0 && (
-                  <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-[10px] font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                    {cartItemCount}
-                  </span>
-                )}
+              <Link to="/cart" className="block px-4 py-2 hover:text-gray-200">
+                Cart
+                <FontAwesomeIcon icon={faCartShopping} className="h-5 w-5 px-2" />
               </Link>
             </div>
-            <Link to="/login" className="block px-4 py-2 hover:text-gray-200">
+            {/* <Link to="/login" className="block px-4 py-2 hover:text-gray-200">
               Login
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

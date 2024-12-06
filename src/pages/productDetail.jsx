@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
 import { fetchProductDetails } from "../api";
 import { ProductDetailContent } from "../components";
 import { ErrorMessage } from "../components";
 
 function ProductDetail() {
   const { id } = useParams();
+  const { addToCart } = useOutletContext();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
 
@@ -28,18 +29,8 @@ function ProductDetail() {
 
   const handleAddToCart = (product) => {
     console.log("Add to Cart:", product);
-    // Implement the logic to add the product to the cart later
+    addToCart({ ...product, quantity: 1 });
   };
-
-  // if (error) {
-  //   return (
-  //     <div>
-  //       <h2>Error: {error.message}</h2>
-  //       <p>Status: {error.status}</p>
-  //       <p>Status code: {error.statusCode}</p>
-  //     </div>
-  //   );
-  // }
 
   if (error) {
     return <ErrorMessage message={error.message} status={error.status} statusCode={error.statusCode} />;
