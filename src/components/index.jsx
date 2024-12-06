@@ -1,9 +1,10 @@
-import Header from "./header";
-import Footer from "./footer";
-import FilterInput from "./filterInput";
-import ProductCard from "./productCard";
+import Header from "./Header";
+import Footer from "./Footer";
+import FilterInput from "./FilterInput";
+import ProductCard from "./ProductCard";
 import HomeContent from "./HomeContent";
-import ProductDetailContent from "./productDetailContent";
+import ProductDetailContent from "./ProductDetailContent";
 import ErrorMessage from "./ErrorMessage";
+import CartContent from "./CartContent";
 
-export { Header, Footer, FilterInput, ProductCard, HomeContent, ProductDetailContent, ErrorMessage };
+export { Header, Footer, FilterInput, ProductCard, HomeContent, ProductDetailContent, ErrorMessage, CartContent };
