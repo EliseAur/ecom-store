@@ -14,7 +14,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
         <FilterInput value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
       <main className="mt-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[300px] mx-auto sm:max-w-none">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
