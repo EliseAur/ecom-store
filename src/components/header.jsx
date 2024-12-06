@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ cart }) {
   const [isOpen, setIsOpen] = useState(false);
-  // const cartItemCount = 3; // Placeholder number for now
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -97,5 +97,20 @@ function Header({ cart }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  cart: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+      }).isRequired,
+      discountedPrice: PropTypes.number.isRequired,
+      quantity: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Header;
