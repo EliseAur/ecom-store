@@ -13,7 +13,9 @@ export async function fetchData(url) {
       console.log("Fetched data:", result.data);
       return result.data;
     } else {
-      const error = new Error(result.errors ? result.errors[0].message : "An error occurred");
+      const error = new Error(
+        result.errors ? result.errors[0].message : "An error occurred",
+      );
       error.status = result.status;
       error.statusCode = result.statusCode;
       throw error;

@@ -33,14 +33,22 @@ function ProductDetail() {
   };
 
   if (error) {
-    return <ErrorMessage message={error.message} status={error.status} statusCode={error.statusCode} />;
+    return (
+      <ErrorMessage
+        message={error.message}
+        status={error.status}
+        statusCode={error.statusCode}
+      />
+    );
   }
 
   if (!product) {
     return <div>Loading...</div>;
   }
 
-  return <ProductDetailContent product={product} onAddToCart={handleAddToCart} />;
+  return (
+    <ProductDetailContent product={product} onAddToCart={handleAddToCart} />
+  );
 }
 
 export default ProductDetail;

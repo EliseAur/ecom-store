@@ -28,10 +28,22 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
                   return (
                     <tr key={index} className="border-b">
                       <td className="py-2 text-xs sm:text-base">
-                        <Link to={`/product/${product.id}`} className="flex flex-col items-center">
-                          <img src={product.image.url} alt={product.image.alt} className="w-12 h-12 object-cover rounded-md hover:opacity-75 transition-opacity duration-200" />
+                        <Link
+                          to={`/product/${product.id}`}
+                          className="flex flex-col items-center"
+                        >
+                          <img
+                            src={product.image.url}
+                            alt={product.image.alt}
+                            className="w-12 h-12 object-cover rounded-md hover:opacity-75 transition-opacity duration-200"
+                          />
                           <div className="hover:underline">{product.title}</div>
-                          {discountInfo && <div className="text-red-600">On sale: -{discountInfo.discountPercentage.toFixed(2)}%</div>}
+                          {discountInfo && (
+                            <div className="text-red-600">
+                              On sale: -
+                              {discountInfo.discountPercentage.toFixed(2)}%
+                            </div>
+                          )}
                         </Link>
                       </td>
                       <td className="py-2">
@@ -40,10 +52,17 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
                           value={product.quantity}
                           min="0"
                           className="w-12 text-center border rounded"
-                          onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
+                          onChange={(e) =>
+                            handleQuantityChange(
+                              product.id,
+                              parseInt(e.target.value),
+                            )
+                          }
                         />
                       </td>
-                      <td className="py-2">${product.discountedPrice.toFixed(2)}</td>
+                      <td className="py-2">
+                        ${product.discountedPrice.toFixed(2)}
+                      </td>
                       <td className="py-2">${totalPrice.toFixed(2)}</td>
                     </tr>
                   );
@@ -52,11 +71,15 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
                   <td className="w-1/3 py-2 text-xs sm:text-base">Total:</td>
                   <td className="w-2/9 py-2 text-xs sm:text-base"></td>
                   <td className="w-2/9 py-2 text-xs sm:text-base"></td>
-                  <td className="w-2/9 py-2 text-xs sm:text-base">${total.toFixed(2)}</td>
+                  <td className="w-2/9 py-2 text-xs sm:text-base">
+                    ${total.toFixed(2)}
+                  </td>
                 </tr>
               </tbody>
             </table>
-            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Checkout</button>
+            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+              Checkout
+            </button>
           </div>
         )}
       </main>
@@ -75,7 +98,7 @@ CartContent.propTypes = {
       }).isRequired,
       discountedPrice: PropTypes.number.isRequired,
       quantity: PropTypes.number.isRequired,
-    })
+    }),
   ).isRequired,
   handleQuantityChange: PropTypes.func.isRequired,
   total: PropTypes.number.isRequired,

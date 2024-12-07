@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faTimes,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Header({ cart }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +21,10 @@ function Header({ cart }) {
     setIsOpen(false);
   }, [location]);
 
-  const totalCartItems = cart.reduce((sum, product) => sum + product.quantity, 0);
+  const totalCartItems = cart.reduce(
+    (sum, product) => sum + product.quantity,
+    0,
+  );
 
   return (
     <header className="bg-blue-600 text-white shadow-md w-full">
@@ -38,8 +45,14 @@ function Header({ cart }) {
               )}
             </Link>
           </span>
-          <button onClick={toggleMenu} className="text-white focus:outline-none">
-            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} className="h-6 w-6" />
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
+            <FontAwesomeIcon
+              icon={isOpen ? faTimes : faBars}
+              className="h-6 w-6"
+            />
           </button>
         </div>
         <nav className={`hidden md:flex md:items-center space-x-4`}>
@@ -69,7 +82,10 @@ function Header({ cart }) {
       </div>
       {isOpen && (
         <div className="fixed inset-0 bg-blue-600 text-white flex flex-col items-center justify-start z-50">
-          <button onClick={toggleMenu} className="absolute top-4 right-4 text-white focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="absolute top-4 right-4 text-white focus:outline-none"
+          >
             <FontAwesomeIcon icon={faTimes} className="h-6 w-6" />
           </button>
           <div className="mt-16 pb-10 space-y-4">
@@ -85,7 +101,10 @@ function Header({ cart }) {
             <div className="relative">
               <Link to="/cart" className="block px-4 py-2 hover:text-gray-200">
                 Cart
-                <FontAwesomeIcon icon={faCartShopping} className="h-5 w-5 px-2" />
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className="h-5 w-5 px-2"
+                />
               </Link>
             </div>
             {/* <Link to="/login" className="block px-4 py-2 hover:text-gray-200">
@@ -109,7 +128,7 @@ Header.propTypes = {
       }).isRequired,
       discountedPrice: PropTypes.number.isRequired,
       quantity: PropTypes.number.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

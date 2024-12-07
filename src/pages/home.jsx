@@ -35,17 +35,20 @@ export default function Home() {
 
   // If there is an error, display the error message
   if (error) {
-    return <ErrorMessage message={error.message} status={error.status} statusCode={error.statusCode} />;
+    return (
+      <ErrorMessage
+        message={error.message}
+        status={error.status}
+        statusCode={error.statusCode}
+      />
+    );
   }
-  // if (error) {
-  //   return (
-  //     <div>
-  //       <h2>Error: {error.message}</h2>
-  //       <p>Status: {error.status}</p>
-  //       <p>Status code: {error.statusCode}</p>
-  //     </div>
-  //   );
-  // }
 
-  return <HomeContent searchTerm={searchTerm} setSearchTerm={setSearchTerm} filteredProducts={filteredProducts} />;
+  return (
+    <HomeContent
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+      filteredProducts={filteredProducts}
+    />
+  );
 }

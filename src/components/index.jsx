@@ -7,4 +7,13 @@ import ProductDetailContent from "./ProductDetailContent";
 import ErrorMessage from "./ErrorMessage";
 import CartContent from "./CartContent";
 
-export { Header, Footer, FilterInput, ProductCard, HomeContent, ProductDetailContent, ErrorMessage, CartContent };
+export {
+  Header,
+  Footer,
+  FilterInput,
+  ProductCard,
+  HomeContent,
+  ProductDetailContent,
+  ErrorMessage,
+  CartContent,
+};
