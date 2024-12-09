@@ -27,7 +27,7 @@ function Header({ cart }) {
   );
 
   return (
-    <header className="bg-blue-600 text-white shadow-md w-full sticky top-0">
+    <header className="bg-blue-600 text-white shadow-md w-full sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="text-lg font-bold">
           <Link to="/" className="hover:text-gray-200">
@@ -66,9 +66,6 @@ function Header({ cart }) {
             Contact
           </Link>
         </nav>
-        {/* <Link to="/login" className="hover:text-gray-200 hidden md:block">
-          Login
-        </Link> */}
         <span className="relative mx-9 hidden md:block">
           <Link to="/cart" className="hover:text-gray-200">
             <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
@@ -107,9 +104,6 @@ function Header({ cart }) {
                 />
               </Link>
             </div>
-            {/* <Link to="/login" className="block px-4 py-2 hover:text-gray-200">
-              Login
-            </Link> */}
           </div>
         </div>
       )}
