@@ -14,7 +14,7 @@ function ProductDetailContent({ product, onAddToCart }) {
         alt={product.image.alt}
         className="mt-3 w-full h-80 object-cover rounded-md"
       />
-      <h2 className="text-xl font-bold">Product details</h2>
+      <h2 className="mt-3 text-xl font-bold">Product details</h2>
       <p className="">{product.description}</p>
       <p className="mt-3 text-xl font-bold">
         ${product.discountedPrice.toFixed(2)}
