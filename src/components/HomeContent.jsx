@@ -1,27 +1,69 @@
 import PropTypes from "prop-types";
 import { FilterInput } from "./index";
 import { ProductCard } from "./index";
+import { Link } from "react-router-dom";
 
 function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      console.log("Enter key pressed");
+      event.preventDefault();
+      document
+        .getElementById("searchResults")
+        .scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div id="main-container" className="container mx-auto">
-      <div className="text-center py-4">
-        <h1 className="text-3xl font-bold">
-          HOME - Welcome to Shop:it - Shop til you drop
-        </h1>
-        <p className="mt-2">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
-          necessitatibus incidunt ducimus in ab ratione voluptas, a possimus
-          aperiam cumque, ipsa quae dolorem doloremque odio. Exercitationem,
-          aspernatur accusamus? Illo, consequatur?
-        </p>
-        <FilterInput
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+    <div id="main-container" className="mx-auto">
+      <div
+        className="relative bg-cover bg-center h-screen"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1511317559916-56d5ddb62563?q=80&w=1986&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative text-center py-20 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+            Welcome to Shop:it
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl lg:text-2xl text-white max-w-2xl mx-auto">
+            Shop til you drop! Discover the best deals and latest trends in
+            fashion, electronics, and more.
+          </p>
+          <div className="max-w-[300px] mx-auto">
+            <Link
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("searchResults")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+              className="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 w-full"
+            >
+              Start Shopping
+            </Link>
+            <div className="">
+              <FilterInput
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <main className="mt-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[300px] mx-auto sm:max-w-none">
+      <main id="searchResults" className="mt-6 container mx-auto">
+        <div className="px-2 grid grid-cols-1 max-w-[300px] mx-auto sm:max-w-none">
+          <FilterInput
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
+        <div className="px-2 my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[300px] mx-auto sm:max-w-none">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

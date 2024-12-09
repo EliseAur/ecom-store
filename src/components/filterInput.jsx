@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 
-export default function FilterInput({ value, onChange }) {
+export default function FilterInput({ value, onChange, onKeyDown }) {
   return (
     <input
       type="text"
       placeholder="Search for products..."
-      className="mt-4 p-2 border border-gray-300 rounded-md"
+      className="w-full mt-4 py-3 px-3 border border-gray-300 rounded-md"
       value={value}
       onChange={onChange}
+      onKeyDown={onKeyDown}
     />
   );
 }
@@ -15,4 +16,5 @@ export default function FilterInput({ value, onChange }) {
 FilterInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onKeyDown: PropTypes.func.isRequired,
 };
