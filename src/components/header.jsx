@@ -27,7 +27,7 @@ function Header({ cart }) {
   );
 
   return (
-    <header className="bg-blue-600 text-white shadow-md w-full">
+    <header className="bg-blue-600 text-white shadow-md w-full sticky top-0">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="text-lg font-bold">
           <Link to="/" className="hover:text-gray-200">
