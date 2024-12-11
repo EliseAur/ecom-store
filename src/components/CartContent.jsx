@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { calculateDiscount } from "../utils";
 
 function CartContent({ groupedProducts, handleQuantityChange, total }) {
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/checkout-success");
+  };
+
   return (
     <div id="main-container" className="container mx-auto">
       <main className="text-center">
@@ -77,7 +83,10 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
                 </tr>
               </tbody>
             </table>
-            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+            <button
+              onClick={handleCheckout}
+              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            >
               Checkout
             </button>
           </div>

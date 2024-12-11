@@ -7,6 +7,7 @@ import ProductDetailContent from "./ProductDetailContent";
 import ErrorMessage from "./ErrorMessage";
 import CartContent from "./CartContent";
 import CartIcon from "./CartIcon";
+import CheckoutSuccessContent from "./CheckoutSuccessContent";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   ErrorMessage,
   CartContent,
   CartIcon,
+  CheckoutSuccessContent,
 };

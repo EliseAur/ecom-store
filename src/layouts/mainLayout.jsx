@@ -10,10 +10,14 @@ function MainLayout() {
     setCart((prevCart) => addToCartUtil(prevCart, product));
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   return (
     <div id="main-container" className="">
       <Header cart={cart} />
-      <Outlet context={{ cart, setCart, addToCart }} />
+      <Outlet context={{ cart, setCart, addToCart, clearCart }} />
       <Footer />
     </div>
   );
