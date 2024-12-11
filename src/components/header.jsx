@@ -2,11 +2,8 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { CartIcon } from "./index";
 
 function Header({ cart }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +18,6 @@ function Header({ cart }) {
     setIsOpen(false);
   }, [location]);
 
-  const totalCartItems = cart.reduce(
-    (sum, product) => sum + product.quantity,
-    0,
-  );
-
   return (
     <header className="bg-blue-600 text-white shadow-md w-full sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -35,16 +27,7 @@ function Header({ cart }) {
           </Link>
         </div>
         <div className="md:hidden">
-          <span className="relative mx-9">
-            <Link to="/cart" className="hover:text-gray-200">
-              <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
-              {totalCartItems > 0 && (
-                <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-[10px] font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                  {totalCartItems}
-                </span>
-              )}
-            </Link>
-          </span>
+          <CartIcon cart={cart} className="mx-7" />
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none"
@@ -66,16 +49,7 @@ function Header({ cart }) {
             Contact
           </Link>
         </nav>
-        <span className="relative mx-9 hidden md:block">
-          <Link to="/cart" className="hover:text-gray-200">
-            <FontAwesomeIcon icon={faCartShopping} className="h-6 w-6" />
-            {totalCartItems > 0 && (
-              <span className="absolute bottom-3 left-5 inline-flex items-center justify-center px-1.5 py-1 text-[10px] font-bold leading-none text-red-100 bg-red-600 rounded-full">
-                {totalCartItems}
-              </span>
-            )}
-          </Link>
-        </span>
+        <CartIcon cart={cart} className="mx-9 hidden md:block" />
       </div>
       {isOpen && (
         <div className="fixed inset-0 bg-blue-600 text-white flex flex-col items-center justify-start z-50">
@@ -86,23 +60,27 @@ function Header({ cart }) {
             <FontAwesomeIcon icon={faTimes} className="h-6 w-6" />
           </button>
           <div className="mt-16 pb-10 space-y-4">
-            <Link to="/" className="block px-4 py-2 hover:text-gray-200">
+            <Link
+              to="/"
+              className="block px-4 py-2 text-xl hover:text-gray-200"
+            >
               Home
             </Link>
-            <Link to="/about" className="block px-4 py-2 hover:text-gray-200">
+            <Link
+              to="/about"
+              className="block px-4 py-2 text-xl hover:text-gray-200"
+            >
               About
             </Link>
-            <Link to="/contact" className="block px-4 py-2 hover:text-gray-200">
+            <Link
+              to="/contact"
+              className="block px-4 py-2 text-xl hover:text-gray-200"
+            >
               Contact
             </Link>
-            <div className="relative">
-              <Link to="/cart" className="block px-4 py-2 hover:text-gray-200">
-                Cart
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  className="h-5 w-5 px-2"
-                />
-              </Link>
+            <div className="relative px-4 py-2 hover:text-gray-200">
+              <span className="mr-3 text-xl">Cart</span>
+              <CartIcon cart={cart} />
             </div>
           </div>
         </div>
