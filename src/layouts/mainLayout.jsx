@@ -15,7 +15,7 @@ function MainLayout() {
   };
 
   return (
-    <div id="main-container" className="">
+    <div>
       <Header cart={cart} />
       <Outlet context={{ cart, setCart, addToCart, clearCart }} />
       <Footer />
