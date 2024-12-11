@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
-import { calculateDiscount } from "../utils";
+import { calculateDiscount, calculateProductTotal } from "../utils";
 
 function CartContent({ groupedProducts, handleQuantityChange, total }) {
   const navigate = useNavigate();
+  // const total = calculateTotal(groupedProducts);
 
   const handleCheckout = () => {
     navigate("/checkout-success");
@@ -30,7 +31,7 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
               <tbody>
                 {groupedProducts.map((product, index) => {
                   const discountInfo = calculateDiscount(product);
-                  const totalPrice = product.discountedPrice * product.quantity;
+                  const totalProductPrice = calculateProductTotal(product);
                   return (
                     <tr key={index} className="border-b">
                       <td className="py-2 text-xs sm:text-base">
@@ -69,7 +70,7 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
                       <td className="py-2">
                         ${product.discountedPrice.toFixed(2)}
                       </td>
-                      <td className="py-2">${totalPrice.toFixed(2)}</td>
+                      <td className="py-2">${totalProductPrice.toFixed(2)}</td>
                     </tr>
                   );
                 })}

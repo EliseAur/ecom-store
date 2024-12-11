@@ -2,12 +2,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
+import { calculateCartItems } from "../utils";
 
 const CartIcon = ({ cart, className }) => {
-  const totalCartItems = cart.reduce(
-    (sum, product) => sum + product.quantity,
-    0,
-  );
+  const totalCartItems = calculateCartItems(cart);
 
   return (
     <span className={`relative ${className}`}>
