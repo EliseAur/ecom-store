@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { calculateDiscount } from "../utils";
 
 function ProductDetailContent({ product, onAddToCart }) {
@@ -37,6 +38,13 @@ function ProductDetailContent({ product, onAddToCart }) {
       >
         Add to Cart
       </button>
+      <Link
+        to="/"
+        className="mt-4 ml-3 bg-blue-600 text-white px-4 py-2.5 rounded-md hover:bg-blue-700"
+      >
+        Back to products
+      </Link>
+
       <h2 className="mt-5 text-xl">
         <span className="font-bold">Ratings ({product.reviews.length}):</span>{" "}
         {product.rating}/5
