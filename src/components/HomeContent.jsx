@@ -9,7 +9,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
       console.log("Enter key pressed");
       event.preventDefault();
       document
-        .getElementById("searchResults")
+        .getElementById("productsContainer")
         .scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -38,7 +38,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
               onClick={(e) => {
                 e.preventDefault();
                 document
-                  .getElementById("searchResults")
+                  .getElementById("productsContainer")
                   .scrollIntoView({ behavior: "smooth" });
               }}
               className="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 w-full"
@@ -55,7 +55,8 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
           </div>
         </div>
       </div>
-      <main id="searchResults" className="mt-6 container mx-auto">
+      <main id="productsContainer" className="p-4 container mx-auto">
+        <h2 className="py-2 text-3xl text-center font-bold">Products</h2>
         <div className="px-2 grid grid-cols-1 max-w-[300px] mx-auto sm:max-w-none">
           <FilterInput
             value={searchTerm}
