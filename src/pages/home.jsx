@@ -18,6 +18,10 @@ export default function Home() {
       try {
         const products = await fetchProducts();
         setProducts(products);
+        const productsContainer = document.getElementById("productsContainer");
+        if (productsContainer) {
+          productsContainer.scrollIntoView({ behavior: "smooth" });
+        }
       } catch (error) {
         setError({
           message: error.message,
