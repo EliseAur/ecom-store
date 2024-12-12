@@ -7,6 +7,7 @@ import {
   Cart,
   ProductDetail,
   CheckoutSuccess,
+  ContactSuccess,
 } from "../pages";
 import { MainLayout } from "../layouts";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "checkout-success",
         element: <CheckoutSuccess />,
+      },
+      {
+        path: "contact-success",
+        element: <ContactSuccess />,
       },
       // Other pages that share the same structure and lyout as Home and About
     ],
