@@ -4,7 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import PropTypes from "prop-types";
 import { calculateCartItems } from "../utils";
 
-const CartIcon = ({ cart, className }) => {
+const CartIcon = ({ cart, className = "relative" }) => {
   const totalCartItems = calculateCartItems(cart);
 
   return (
@@ -30,10 +30,6 @@ CartIcon.propTypes = {
     }),
   ).isRequired,
   className: PropTypes.string,
-};
-
-CartIcon.defaultProps = {
-  className: "",
 };
 
 export default CartIcon;
