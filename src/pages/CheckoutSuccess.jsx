@@ -3,11 +3,12 @@ import { useOutletContext } from "react-router-dom";
 import { CheckoutSuccessContent } from "../components";
 
 function CheckoutSuccess() {
-  const { clearCart } = useOutletContext();
-
+  const { clearCart, cart } = useOutletContext();
   useEffect(() => {
     clearCart();
-  }, [clearCart]);
+  }, []);
+
+  console.log("Cart after CheckoutSuccess:", cart);
 
   return <CheckoutSuccessContent />;
 }

@@ -5,6 +5,9 @@ import { calculateTotal } from "../utils";
 
 function Cart() {
   const { cart, setCart } = useOutletContext();
+
+  console.log("This is the cart array:", cart);
+
   const groupedProducts = groupProductsById(cart);
   const total = calculateTotal(groupedProducts);
 
