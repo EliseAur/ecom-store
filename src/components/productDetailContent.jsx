@@ -7,7 +7,7 @@ function ProductDetailContent({ product, onAddToCart }) {
   const discountInfo = calculateDiscount(product);
 
   return (
-    <div className="container mx-auto p-4 max-w-[400px]">
+    <div className="container mx-auto p-4 max-w-[400px] flex-grow">
       <h1 className="text-3xl font-bold">{product.title}</h1>
       <img
         src={product.image.url}
@@ -37,7 +37,7 @@ function ProductDetailContent({ product, onAddToCart }) {
       >
         Add to Cart
       </button>
-      <h2 className="mt-3 text-xl">
+      <h2 className="mt-5 text-xl">
         <span className="font-bold">Ratings ({product.reviews.length}):</span>{" "}
         {product.rating}/5
       </h2>

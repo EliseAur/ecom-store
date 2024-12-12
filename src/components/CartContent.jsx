@@ -12,7 +12,7 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto flex-grow">
       <main className="text-center">
         <h1 className="text-3xl">Shopping Cart</h1>
         <p>This is your shopping cart</p>

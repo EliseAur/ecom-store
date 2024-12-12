@@ -15,7 +15,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
   };
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto flex-grow">
       <div
         className="relative bg-cover bg-center h-screen"
         style={{

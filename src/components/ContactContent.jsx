@@ -34,7 +34,7 @@ function ContactContent({ onSubmit }) {
   });
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 flex-grow">
       <main className="text-center">
         <h1 className="text-3xl mb-4">Contact</h1>
         <p className="mb-6">

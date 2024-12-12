@@ -15,7 +15,7 @@ function MainLayout() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header cart={cart} />
       <Outlet context={{ cart, setCart, addToCart, clearCart }} />
       <Footer />
