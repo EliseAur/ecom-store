@@ -3,7 +3,6 @@ import CartTableRow from "./CartTableRow";
 import CartTotalRow from "./CartTotalRow";
 
 function CartTable({ groupedProducts, handleQuantityChange, total }) {
-  console.log("CartTable groupedProducts:", groupedProducts);
   return (
     <table className="min-w-full bg-white">
       <thead>

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { calculateDiscount, calculateProductTotal } from "../utils";
 
 function CartTableRow({ product, handleQuantityChange }) {
-  console.log("CartTableRow product:", product);
-
   const discountInfo = calculateDiscount(product);
   const totalProductPrice = calculateProductTotal(product);
 
