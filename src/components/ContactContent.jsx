@@ -35,8 +35,8 @@ function ContactContent({ onSubmit }) {
 
   return (
     <div className="container mx-auto p-4 flex-grow">
-      <main className="text-center">
-        <h1 className="text-3xl mb-4">Contact</h1>
+      <main className="text-center max-w-lg mx-auto">
+        <h1 className="text-3xl mb-4 font-semibold">Contact</h1>
         <p className="mb-6">
           If you have any questions, please fill out the form and contact us
         </p>
@@ -45,7 +45,7 @@ function ContactContent({ onSubmit }) {
             <div className="text-left">
               <label
                 htmlFor="fullName"
-                className="block text-sm font-bold text-gray-700"
+                className="block font-bold text-gray-700"
               >
                 Full name
               </label>
@@ -54,14 +54,14 @@ function ContactContent({ onSubmit }) {
                 type="text"
                 placeholder="Full name"
                 {...register("fullName")}
-                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
               />
               <p className="text-red-600 text-sm">{errors.fullName?.message}</p>
             </div>
             <div className="text-left">
               <label
                 htmlFor="subject"
-                className="block font-bold text-sm text-gray-700"
+                className="block font-bold text-gray-700"
               >
                 Subject
               </label>
@@ -75,10 +75,7 @@ function ContactContent({ onSubmit }) {
               <p className="text-red-600 text-sm">{errors.subject?.message}</p>
             </div>
             <div className="text-left">
-              <label
-                htmlFor="email"
-                className="block text-sm font-bold text-gray-700"
-              >
+              <label htmlFor="email" className="block font-bold text-gray-700">
                 Email
               </label>
               <input
@@ -92,10 +89,7 @@ function ContactContent({ onSubmit }) {
             </div>
           </div>
           <div className="text-left">
-            <label
-              htmlFor="message"
-              className="block text-sm font-bold text-gray-700"
-            >
+            <label htmlFor="message" className="block font-bold text-gray-700">
               Message
             </label>
             <textarea
@@ -111,7 +105,7 @@ function ContactContent({ onSubmit }) {
           </div>
           <button
             type="submit"
-            className="bg-blue-600 text-white p-2 mt-4 w-full rounded hover:bg-blue-700"
+            className="bg-zinc-900 text-white p-2 mt-4 w-full rounded hover:bg-zinc-800"
           >
             Submit
           </button>

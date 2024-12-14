@@ -35,7 +35,7 @@ export default function ProductCard({ product }) {
 
       <Link
         to={`/product/${product.id}`}
-        className="mt-4 inline-block bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700"
+        className="mt-4 inline-block bg-zinc-900 text-white px-4 py-1 rounded-md hover:bg-zinc-800"
       >
         View
       </Link>
