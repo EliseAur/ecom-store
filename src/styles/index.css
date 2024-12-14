@@ -5,3 +5,7 @@
 html {
   scroll-padding-top: 60px; /* Adjust the value as needed */
 }
+
+body {
+  font-family: kanit, sans-serif;
+}
