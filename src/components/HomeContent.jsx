@@ -15,7 +15,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
   };
 
   return (
-    <div className="mx-auto flex-grow">
+    <div className="flex-grow">
       <div
         className="relative bg-cover bg-center h-screen"
         style={{
@@ -55,16 +55,19 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
           </div>
         </div>
       </div>
-      <main id="productsContainer" className="p-4 container mx-auto">
+      <main
+        id="productsContainer"
+        className="p-4 container mx-auto max-w-[300px] sm:max-w-[550px] md:sm:max-w-[850px] xl:max-w-[1100px]"
+      >
         <h2 className="py-2 text-3xl text-center font-bold">Products</h2>
-        <div className="px-2 grid grid-cols-1 max-w-[300px] mx-auto sm:max-w-none">
+        <div className="px-2 grid grid-cols-1 mx-auto">
           <FilterInput
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={handleKeyDown}
           />
         </div>
-        <div className="px-2 my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[300px] mx-auto sm:max-w-none">
+        <div className="px-2 my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
