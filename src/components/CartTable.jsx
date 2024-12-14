@@ -30,7 +30,7 @@ function CartTable({ groupedProducts, handleQuantityChange, total }) {
 CartTable.propTypes = {
   groupedProducts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       image: PropTypes.shape({
         url: PropTypes.string.isRequired,
