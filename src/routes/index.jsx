@@ -1,5 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, About, Login, Contact, Cart } from "../pages";
+import {
+  Home,
+  About,
+  Login,
+  Contact,
+  Cart,
+  ProductDetail,
+  CheckoutSuccess,
+  ContactSuccess,
+} from "../pages";
 import { MainLayout } from "../layouts";
 
 const router = createBrowserRouter([
@@ -26,6 +35,18 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "product/:id",
+        element: <ProductDetail />,
+      },
+      {
+        path: "checkout-success",
+        element: <CheckoutSuccess />,
+      },
+      {
+        path: "contact-success",
+        element: <ContactSuccess />,
       },
       // Other pages that share the same structure and lyout as Home and About
     ],
