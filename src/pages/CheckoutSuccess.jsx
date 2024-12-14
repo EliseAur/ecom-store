@@ -4,11 +4,12 @@ import { CheckoutSuccessContent } from "../components";
 
 function CheckoutSuccess() {
   const { clearCart, cart } = useOutletContext();
+
   useEffect(() => {
     clearCart();
   }, []);
 
-  console.log("Cart after CheckoutSuccess:", cart);
+  console.log("Cart before/after CheckoutSuccess:", cart);
 
   return <CheckoutSuccessContent />;
 }
