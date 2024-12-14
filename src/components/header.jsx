@@ -78,10 +78,13 @@ function Header({ cart }) {
             >
               Contact
             </Link>
-            <div className="relative px-4 py-2 hover:text-gray-200">
+            <Link
+              to="/cart"
+              className="block relative px-4 py-2 hover:text-gray-200"
+            >
               <span className="mr-3 text-xl">Cart</span>
               <CartIcon cart={cart} />
-            </div>
+            </Link>
           </div>
         </div>
       )}
