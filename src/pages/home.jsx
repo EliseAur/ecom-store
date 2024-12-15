@@ -3,25 +3,29 @@ import { fetchProducts } from "../api";
 import { filterProducts } from "../utils";
 import { HomeContent } from "../components";
 import { ErrorMessage } from "../components";
+import { useLocation } from "react-router-dom";
 
 export default function Home() {
-  // State to store the list of products
   const [products, setProducts] = useState([]);
-  // State to store the search term entered by the user
   const [searchTerm, setSearchTerm] = useState("");
-  // State to store any error messages
   const [error, setError] = useState(null);
+  const location = useLocation();
 
-  // useEffect hook to fetch products when the component mounts
   useEffect(() => {
+    const hasVisitedHome = localStorage.getItem("hasVisitedHome");
+    if (!hasVisitedHome) {
+      localStorage.setItem("hasVisitedHome", "true");
+    } else if (location.hash === "#productsContainer") {
+      const productsContainer = document.getElementById("productsContainer");
+      if (productsContainer) {
+        productsContainer.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
     async function loadProducts() {
       try {
         const products = await fetchProducts();
         setProducts(products);
-        const productsContainer = document.getElementById("productsContainer");
-        if (productsContainer) {
-          productsContainer.scrollIntoView({ behavior: "smooth" });
-        }
       } catch (error) {
         setError({
           message: error.message,
@@ -32,12 +36,10 @@ export default function Home() {
     }
 
     loadProducts();
-  }, []);
+  }, [location]);
 
-  // Filter the products based on the search term
   const filteredProducts = filterProducts(products, searchTerm);
 
-  // If there is an error, display the error message
   if (error) {
     return (
       <ErrorMessage

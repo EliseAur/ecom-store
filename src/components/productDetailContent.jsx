@@ -49,7 +49,7 @@ function ProductDetailContent({ product, onAddToCart }) {
         </div>
         <div className="my-4 max-w-[157px] sm:max-w-[180px] sm:flex-1">
           <div className="sm:ml-2 w-full bg-white text-black border-zinc-900 border-2 py-1.5 rounded-md hover:bg-zinc-200 text-center">
-            <Link to="/">Back to products</Link>
+            <Link to="/#productsContainer">Back to products</Link>
           </div>
         </div>
       </div>

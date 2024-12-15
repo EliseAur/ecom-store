@@ -35,12 +35,21 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
               handleQuantityChange={handleQuantityChange}
               total={total}
             />
-            <button
-              onClick={handleCheckout}
-              className="mt-4 bg-zinc-900 text-white px-4 py-2 rounded-md hover:bg-zinc-600"
-            >
-              Checkout
-            </button>
+            <div className="mt-4 flex flex-col max-w-[157px] sm:flex-row sm:justify-between mx-auto sm:max-w-none">
+              <div className="my-1 max-w-[157px] sm:max-w-[180px] sm:flex-1">
+                <div className=" w-full bg-white text-black border-zinc-900 border-2 py-1.5 rounded-md hover:bg-zinc-200 text-center">
+                  <Link to="/#productsContainer">Continue shopping</Link>
+                </div>
+              </div>
+              <div className="my-1 max-w-[157px] sm:max-w-[180px] sm:flex-1">
+                <button
+                  onClick={handleCheckout}
+                  className="w-full bg-zinc-900 text-white py-2 rounded-md hover:bg-zinc-800"
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </main>
