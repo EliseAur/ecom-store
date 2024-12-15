@@ -1,6 +1,7 @@
 import Header from "./header";
 import Footer from "./footer";
-import FilterInput from "./filterInput";
+import FilterInputHero from "./filterInput";
+import FilterInputMainSection from "./FilterInputMainSection";
 import ProductCard from "./productCard";
 import HomeContent from "./HomeContent";
 import ProductDetailContent from "./productDetailContent";
@@ -17,7 +18,8 @@ import ContactSuccessContent from "./ContactSuccessContent";
 export {
   Header,
   Footer,
-  FilterInput,
+  FilterInputHero,
+  FilterInputMainSection,
   ProductCard,
   HomeContent,
   ProductDetailContent,

@@ -1,19 +1,8 @@
 import PropTypes from "prop-types";
-import { FilterInput } from "./index";
-import { ProductCard } from "./index";
+import { FilterInputHero, FilterInputMainSection, ProductCard } from "./index";
 import { Link } from "react-router-dom";
 
 function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      console.log("Enter key pressed");
-      event.preventDefault();
-      document
-        .getElementById("productsContainer")
-        .scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="flex-grow">
       <div
@@ -45,13 +34,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
             >
               Start Shopping
             </Link>
-            <div className="">
-              <FilterInput
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={handleKeyDown}
-              />
-            </div>
+            <FilterInputHero products={filteredProducts} />
           </div>
         </div>
       </div>
@@ -61,10 +44,9 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
       >
         <h2 className="py-2 text-3xl text-center font-semibold">Products</h2>
         <div className="px-2 grid grid-cols-1 mx-auto">
-          <FilterInput
+          <FilterInputMainSection
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyDown}
           />
         </div>
         <div className="px-2 my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
