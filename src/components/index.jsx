@@ -1,5 +1,5 @@
 import Header from "./header";
-import Footer from "./Footer";
+import Footer from "./footer";
 import FilterInput from "./filterInput";
 import ProductCard from "./productCard";
 import HomeContent from "./HomeContent";
