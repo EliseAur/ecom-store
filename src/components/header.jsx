@@ -19,10 +19,13 @@ function Header({ cart }) {
   }, [location]);
 
   return (
-    <header className="bg-blue-600 text-white shadow-md w-full sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <div className="text-lg font-bold">
-          <Link to="/" className="hover:text-gray-200">
+    <header className="bg-zinc-900 text-white shadow-md w-full sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center p-3">
+        <div>
+          <Link
+            to="/"
+            className="font-extrabold italic hover:text-gray-200 text-2xl sm:text-3xl"
+          >
             Shop:it
           </Link>
         </div>
@@ -52,7 +55,7 @@ function Header({ cart }) {
         <CartIcon cart={cart} className="mx-9 hidden md:block" />
       </div>
       {isOpen && (
-        <div className="fixed inset-0 bg-blue-600 text-white flex flex-col items-center justify-start z-50">
+        <div className="fixed inset-0 bg-zinc-900 text-white flex flex-col items-center justify-start z-50">
           <button
             onClick={toggleMenu}
             className="absolute top-4 right-4 text-white focus:outline-none"

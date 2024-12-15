@@ -41,7 +41,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
                   .getElementById("productsContainer")
                   .scrollIntoView({ behavior: "smooth" });
               }}
-              className="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-blue-700 w-full"
+              className="mt-8 inline-block bg-zinc-900 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-zinc-800 w-full"
             >
               Start Shopping
             </Link>
@@ -59,7 +59,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
         id="productsContainer"
         className="p-4 container mx-auto max-w-[300px] sm:max-w-[550px] md:sm:max-w-[850px] xl:max-w-[1100px]"
       >
-        <h2 className="py-2 text-3xl text-center font-bold">Products</h2>
+        <h2 className="py-2 text-3xl text-center font-semibold">Products</h2>
         <div className="px-2 grid grid-cols-1 mx-auto">
           <FilterInput
             value={searchTerm}

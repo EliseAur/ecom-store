@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CartTable from "./CartTable";
 
 function CartContent({ groupedProducts, handleQuantityChange, total }) {
@@ -13,11 +14,20 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
 
   return (
     <div className="container mx-auto flex-grow">
-      <main className="text-center">
-        <h1 className="text-3xl">Shopping Cart</h1>
-        <p>This is your shopping cart</p>
+      <main className="text-center p-4 max-w-xl mx-auto">
+        <h1 className="text-3xl font-semibold mb-5">Shopping Cart</h1>
         {groupedProducts.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <div>
+            <p>Your cart is empty.</p>
+            <div className="mt-8">
+              <Link
+                to="/"
+                className="bg-zinc-900 text-white p-2 px-4 mt-8 rounded hover:bg-zinc-800"
+              >
+                Start shopping
+              </Link>
+            </div>
+          </div>
         ) : (
           <div className="overflow-x-auto">
             <CartTable
@@ -27,7 +37,7 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
             />
             <button
               onClick={handleCheckout}
-              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className="mt-4 bg-zinc-900 text-white px-4 py-2 rounded-md hover:bg-zinc-600"
             >
               Checkout
             </button>
