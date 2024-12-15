@@ -20,11 +20,11 @@ function Header({ cart }) {
 
   return (
     <header className="bg-zinc-900 text-white shadow-md w-full sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <div className="text-lg font-bold">
+      <div className="container mx-auto flex justify-between items-center p-3">
+        <div>
           <Link
             to="/"
-            className="font-kanit font-extrabold italic hover:text-gray-200 text-2xl"
+            className="font-extrabold italic hover:text-gray-200 text-2xl sm:text-3xl"
           >
             Shop:it
           </Link>

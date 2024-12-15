@@ -105,7 +105,7 @@ function ContactContent({ onSubmit }) {
           </div>
           <button
             type="submit"
-            className="bg-zinc-900 text-white p-2 mt-4 w-full rounded hover:bg-zinc-800"
+            className="max-w-[157px] bg-zinc-900 text-white p-2 mt-4 w-full rounded hover:bg-zinc-800"
           >
             Submit
           </button>
