@@ -1,8 +1,8 @@
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Cart from "./Cart";
-import ProductDetail from "./ProductDetail";
+import Home from "./home";
+import About from "./about";
+import Contact from "./contact";
+import Cart from "./cart";
+import ProductDetail from "./productDetail";
 import CheckoutSuccess from "./CheckoutSuccess";
 import ContactSuccess from "./ContactSuccess";
 
