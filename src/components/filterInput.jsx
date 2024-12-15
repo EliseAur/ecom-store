@@ -5,7 +5,7 @@ export default function FilterInput({ value, onChange, onKeyDown }) {
     <input
       type="text"
       placeholder="Search for products..."
-      className="w-full mt-4 py-3 px-3 border border-gray-300 rounded-md"
+      className="w-full mt-4 py-3 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-900"
       value={value}
       onChange={onChange}
       onKeyDown={onKeyDown}

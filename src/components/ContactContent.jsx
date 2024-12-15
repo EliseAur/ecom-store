@@ -45,7 +45,7 @@ function ContactContent({ onSubmit }) {
             <div className="text-left">
               <label
                 htmlFor="fullName"
-                className="block font-bold text-gray-700"
+                className="block font-semibold text-zinc-700"
               >
                 Full name
               </label>
@@ -54,14 +54,14 @@ function ContactContent({ onSubmit }) {
                 type="text"
                 placeholder="Full name"
                 {...register("fullName")}
-                className="mt-1 p-2 border border-gray-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
+                className="mt-1 p-2 border border-zinc-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
               />
               <p className="text-red-600 text-sm">{errors.fullName?.message}</p>
             </div>
             <div className="text-left">
               <label
                 htmlFor="subject"
-                className="block font-bold text-gray-700"
+                className="block font-semibold text-zinc-700"
               >
                 Subject
               </label>
@@ -70,12 +70,15 @@ function ContactContent({ onSubmit }) {
                 type="text"
                 placeholder="Subject"
                 {...register("subject")}
-                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                className="mt-1 p-2 border border-zinc-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
               />
               <p className="text-red-600 text-sm">{errors.subject?.message}</p>
             </div>
             <div className="text-left">
-              <label htmlFor="email" className="block font-bold text-gray-700">
+              <label
+                htmlFor="email"
+                className="block font-semibold text-zinc-700"
+              >
                 Email
               </label>
               <input
@@ -83,13 +86,16 @@ function ContactContent({ onSubmit }) {
                 type="email"
                 placeholder="Email"
                 {...register("email")}
-                className="mt-1 p-2 border border-gray-300 rounded w-full"
+                className="mt-1 p-2 border border-zinc-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
               />
               <p className="text-red-600 text-sm">{errors.email?.message}</p>
             </div>
           </div>
           <div className="text-left">
-            <label htmlFor="message" className="block font-bold text-gray-700">
+            <label
+              htmlFor="message"
+              className="block font-semibold text-zinc-700"
+            >
               Message
             </label>
             <textarea
@@ -99,7 +105,7 @@ function ContactContent({ onSubmit }) {
               rows="5"
               placeholder="Message"
               {...register("message")}
-              className="mt-1 p-2 border border-gray-300 rounded w-full"
+              className="mt-1 p-2 border border-zinc-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-zinc-900"
             ></textarea>
             <p className="text-red-600 text-sm">{errors.message?.message}</p>
           </div>
