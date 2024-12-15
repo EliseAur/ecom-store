@@ -5,15 +5,14 @@ import { calculateDiscount } from "../utils";
 export default function ProductCard({ product }) {
   const discountInfo = calculateDiscount(product);
   return (
-    <Link
-      to={`/product/${product.id}`}
-      className="block p-2 border border-zinc-200 rounded-md shadow-md hover:shadow-lg transition-shadow duration-200"
-    >
-      <img
-        src={product.image.url}
-        alt={product.image.alt}
-        className="w-full h-48 object-cover rounded-md"
-      />
+    <div className="block p-2 border border-zinc-200 rounded-md shadow-md hover:shadow-lg transition-shadow duration-200">
+      <Link to={`/product/${product.id}`}>
+        <img
+          src={product.image.url}
+          alt={product.image.alt}
+          className="w-full h-48 object-cover rounded-md"
+        />
+      </Link>
       <div className="p-3">
         <h2 className="text-xl font-semibold">{product.title}</h2>
         <p className="mt-1 text-black font-semibold">
@@ -39,7 +38,7 @@ export default function ProductCard({ product }) {
           View
         </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 
