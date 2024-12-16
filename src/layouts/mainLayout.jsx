@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header, Footer } from "../components";
 import { Outlet } from "react-router-dom";
 import { addToCart as addToCartUtil } from "../utils";
+import { clearCart as clearCartUtil } from "../utils";
 
 function MainLayout() {
   const [cart, setCart] = useState([]);
@@ -11,7 +12,7 @@ function MainLayout() {
   };
 
   const clearCart = () => {
-    setCart([]);
+    setCart(clearCartUtil());
   };
 
   return (
