@@ -4,26 +4,28 @@ import CartTotalRow from "./CartTotalRow";
 
 function CartTable({ groupedProducts, handleQuantityChange, total }) {
   return (
-    <table className="min-w-full bg-white">
-      <thead>
-        <tr>
-          <th className="py-2 text-xs sm:text-base">Product</th>
-          <th className="py-2 text-xs sm:text-base">Quantity</th>
-          <th className="py-2 text-xs sm:text-base">Price</th>
-          <th className="py-2 text-xs sm:text-base">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {groupedProducts.map((product, index) => (
-          <CartTableRow
-            key={index}
-            product={product}
-            handleQuantityChange={handleQuantityChange}
-          />
-        ))}
-        <CartTotalRow total={total} />
-      </tbody>
-    </table>
+    <div className="rounded-md p-3 border border-zinc-200 overflow-hidden shadow-md">
+      <table className="min-w-full bg-white">
+        <thead>
+          <tr>
+            <th className="py-2 text-xs sm:text-base">Product</th>
+            <th className="py-2 text-xs sm:text-base">Quantity</th>
+            <th className="py-2 text-xs sm:text-base">Price</th>
+            <th className="py-2 text-xs sm:text-base">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {groupedProducts.map((product, index) => (
+            <CartTableRow
+              key={index}
+              product={product}
+              handleQuantityChange={handleQuantityChange}
+            />
+          ))}
+          <CartTotalRow total={total} />
+        </tbody>
+      </table>
+    </div>
   );
 }
 

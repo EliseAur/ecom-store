@@ -10,6 +10,7 @@ import CartContent from "./CartContent";
 import CartTable from "./CartTable";
 import CartTableRow from "./CartTableRow";
 import CartTotalRow from "./CartTotalRow";
+import CartEmpty from "./CartEmpty";
 import CartIcon from "./CartIcon";
 import CheckoutSuccessContent from "./CheckoutSuccessContent";
 import ContactContent from "./ContactContent";
@@ -28,6 +29,7 @@ export {
   CartTable,
   CartTableRow,
   CartTotalRow,
+  CartEmpty,
   CartIcon,
   CheckoutSuccessContent,
   ContactContent,

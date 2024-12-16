@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CartTable from "./CartTable";
+import { CartEmpty } from "../components";
 
 function CartContent({
   groupedProducts,
@@ -23,7 +24,7 @@ function CartContent({
         <h1 className="text-3xl font-semibold mb-5">Shopping Cart</h1>
         {groupedProducts.length === 0 ? (
           <div>
-            <p>Your cart is empty.</p>
+            <CartEmpty />
             <div className="mt-8">
               <Link
                 to="/"
