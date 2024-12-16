@@ -5,6 +5,7 @@ export const addToCart = (cart, product) => {
       item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
     );
   } else {
+    alert(`${product.title} added to the cart.`);
     return [...cart, { ...product, quantity: 1 }];
   }
 };
