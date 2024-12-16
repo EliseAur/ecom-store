@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CartTable from "./CartTable";
 
-function CartContent({ groupedProducts, handleQuantityChange, total }) {
+function CartContent({
+  groupedProducts,
+  handleQuantityChange,
+  total,
+  clearCart,
+}) {
   const navigate = useNavigate();
 
   console.log("CartContent groupedProducts:", groupedProducts);
@@ -43,6 +48,14 @@ function CartContent({ groupedProducts, handleQuantityChange, total }) {
               </div>
               <div className="my-1 max-w-[157px] sm:max-w-[180px] sm:flex-1">
                 <button
+                  onClick={clearCart}
+                  className="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700"
+                >
+                  ClearCart
+                </button>
+              </div>
+              <div className="my-1 max-w-[157px] sm:max-w-[180px] sm:flex-1">
+                <button
                   onClick={handleCheckout}
                   className="w-full bg-zinc-900 text-white py-2 rounded-md hover:bg-zinc-800"
                 >
@@ -72,6 +85,7 @@ CartContent.propTypes = {
   ).isRequired,
   handleQuantityChange: PropTypes.func.isRequired,
   total: PropTypes.number.isRequired,
+  clearCart: PropTypes.func.isRequired,
 };
 
 export default CartContent;

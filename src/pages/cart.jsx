@@ -4,7 +4,7 @@ import { CartContent } from "../components";
 import { calculateTotal } from "../utils";
 
 function Cart() {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, clearCart } = useOutletContext();
 
   console.log("This is the cart array:", cart);
 
@@ -20,6 +20,7 @@ function Cart() {
       groupedProducts={groupedProducts}
       handleQuantityChange={handleQuantityChangeHandler}
       total={total}
+      clearCart={clearCart}
     />
   );
 }
