@@ -27,18 +27,27 @@ function CartTableRow({ product, handleQuantityChange }) {
         </Link>
       </td>
       <td className="py-2">
-        <input
-          type="number"
+        <select
           value={product.quantity}
-          min="0"
           className="w-12 text-center border rounded"
           onChange={(e) =>
             handleQuantityChange(product.id, parseInt(e.target.value))
           }
-        />
+        >
+          <option value={0}>Delete</option>
+          {[...Array(5).keys()].map((num) => (
+            <option key={num + 1} value={num + 1}>
+              {num + 1}
+            </option>
+          ))}
+        </select>
       </td>
-      <td className="py-2">${product.discountedPrice.toFixed(2)}</td>
-      <td className="py-2">${totalProductPrice.toFixed(2)}</td>
+      <td className="py-2 text-xs sm:text-base">
+        ${product.discountedPrice.toFixed(2)}
+      </td>
+      <td className="py-2 text-xs sm:text-base">
+        ${totalProductPrice.toFixed(2)}
+      </td>
     </tr>
   );
 }
