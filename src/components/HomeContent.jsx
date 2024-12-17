@@ -40,7 +40,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
       </div>
       <main
         id="productsContainer"
-        className="p-4 container mx-auto max-w-[300px] sm:max-w-[550px] md:sm:max-w-[850px] xl:max-w-[1100px]"
+        className="py-4 px-1 sm:px-4 container mx-auto max-w-[447px] sm:max-w-[550px] md:sm:max-w-[850px] xl:max-w-[1100px]"
       >
         <h2 className="py-2 text-3xl text-center font-semibold">Products</h2>
         <div className="px-2 grid grid-cols-1 mx-auto">
@@ -49,7 +49,7 @@ function HomeContent({ searchTerm, setSearchTerm, filteredProducts }) {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="px-2 my-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mx-auto">
+        <div className="px-2 my-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 mx-auto">
           {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
