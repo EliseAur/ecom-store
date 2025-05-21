@@ -1,83 +1,83 @@
 # Ecom Store project - Shop:it
+![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
-This project is an e-commerce store built with React and Vite. It includes features such as product listing, product details, shopping cart, checkout and contact.
+Course assignment for JavaScript Frameworks course. The site is an e-commerce store built with React and Vite. It includes features such as product listing, product details, shopping cart, checkout and contact.
 
-## Table of Contents
+## Description
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Scripts](#scripts)
-- [Dependencies](#dependencies)
-- [Dev Dependencies](#dev-dependencies)
-- [License](#license)
+Shop:it lets users browse all products, search with a live look-ahead search bar, and view detailed product pages with reviews and discounts. Users can add items to a cart, view and manage their cart, and complete a checkout process with order confirmation. Includes a contact form with validation. The app uses React Router for navigation and features a custom layout with header, cart icon, and footer.
 
-## Installation
+### List of features
+ - A user may browse all products on the homepage
+ - A user may search for products using a look-ahead search bar
+ - A user may view details for an individual product
+ - A user may see product reviews and discounts on the product page
+ - A user may add products to their cart
+ - A user may view the number of items in their cart in the header
+ - A user may view all items in their cart on the cart page
+ - A user may see the total price of items in their cart
+ - A user may remove items from their cart
+ - A user may update the quantity of items in their cart
+ - A user may clear their cart
+ - A user may proceed to checkout from the cart page
+ - A user may see a confirmation message after a successful checkout
+ - A user may fill out and submit a contact form with validation
 
-To get started with this project, clone the repository and install the dependencies:
+## Built With
 
-```bash
-git clone https://github.com/your-username/ecom-store.git
-cd ecom-store
-npm install
-```
+- [React](https://react.dev/) – JavaScript library for building user interfaces
+- [Vite](https://vitejs.dev/) – Fast frontend build tool and development server
+- [Tailwind CSS](https://tailwindcss.com/) – CSS framework
+- [React Router](https://reactrouter.com/) – Declarative routing for React
+- [React Hook Form](https://react-hook-form.com/) – Forms and validation for React
+- [Yup](https://www.npmjs.com/package/yup) – JavaScript schema validation
+- [Font Awesome](https://fontawesome.com/) – Icon library
 
-## Usage
+
+## Getting Started
+
+### Installing
+
+Follow these steps to get the project running locally:
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/EliseAur/ecom-store.git
+   cd ecom-store
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+### Running
 
 To start the development server, run:
 
 ```bash
 npm run dev
 ```
+This will start the app on [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
 
-This will start the Vite development server and you can view the application in your browser at http://localhost:3000.
-
-To build the project for production, run:
-
+---
+**Note:**  
+If you want to preview the production build locally, use:
 ```bash
 npm run build
-```
-
-To preview the production build, run:
-
-```bash
 npm run preview
 ```
+---
 
-## Scripts
+## Contributing
 
-- `dev`: Starts the Vite development server.
-- `build`: Builds the project for production.
-- `lint`: Runs ESLint to check for linting errors.
-- `preview`: Previews the production build.
+Contributions are welcome! If you would like to contribute, please fork the repository and create a pull request with your changes. All contributions will be reviewed before being merged.
 
-## Dependencies
+## Contact
 
-- `@fortawesome/fontawesome-svg-core`: ^6.7.1
-- `@fortawesome/free-solid-svg-icons`: ^6.7.1
-- `@fortawesome/react-fontawesome`: ^0.2.2
-- `@hookform/resolvers`: ^3.9.1
-- `react`: ^18.3.1
-- `react-dom`: ^18.3.1
-- `react-hook-form`: ^7.54.0
-- `react-router-dom`: ^6.28.0
-- `yup`: ^1.5.0
+Feel free to contact me if you have any questions or feedback about the project:
 
-## Dev Dependencies
+[My Linkedin](https://www.linkedin.com/in/elise-aurtande/)
 
-- `@eslint/js`: ^9.13.0
-- `@types/react`: ^18.3.12
-- `@types/react-dom`: ^18.3.1
-- `@vitejs/plugin-react`: ^4.3.3
-- `autoprefixer`: ^10.4.20
-- `eslint`: ^9.13.0
-- `eslint-plugin-react`: ^7.37.2
-- `eslint-plugin-react-hooks`: ^5.0.0
-- `eslint-plugin-react-refresh`: ^0.4.14
-- `globals`: ^15.11.0
-- `postcss`: ^8.4.49
-- `tailwindcss`: ^3.4.14
-- `vite`: ^5.4.10
-
-## License
-
-This project is licensed under the MIT License.
