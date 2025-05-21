@@ -1,4 +1,4 @@
-# Ecom Store project - Shop:it
+# Shop:it - Ecom Store
 ![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
 
 Course assignment for JavaScript Frameworks course. The site is an e-commerce store built with React and Vite. It includes features such as product listing, product details, shopping cart, checkout and contact.
