@@ -62,14 +62,16 @@ npm run dev
 ```
 This will start the app on [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
 
----
 **Note:**  
 If you want to preview the production build locally, use:
 ```bash
 npm run build
 npm run preview
 ```
----
+
+### Live Demo
+
+**Link:** https://ecom-shopit.netlify.app/
 
 ## Contributing
 
